@@ -1,0 +1,90 @@
+---
+// products.astro
+import ProductCard from '../components/ProductCard.astro';
+import SearchIcon from '../assets/search.svg';
+import Layout from '../layouts/Layout.astro';
+
+const products = [
+  {
+    title: "Panel Solar 550W Monocristalino",
+    price: "299.99",
+    features: ["Eficiencia 21.3%", "Garantía 25 años", "Resistente a climas tropicales"],
+    image: "panel-550w.webp"
+  },
+  {
+    title: "Panel Solar 550W Monocristalino",
+    price: "299.99",
+    features: ["Eficiencia 21.3%", "Garantía 25 años", "Resistente a climas tropicales"],
+    image: "panel-550w.webp"
+  },
+  {
+    title: "Panel Solar 550W Monocristalino",
+    price: "299.99",
+    features: ["Eficiencia 21.3%", "Garantía 25 años", "Resistente a climas tropicales"],
+    image: "panel-550w.webp"
+  },
+   {
+    title: "Panel Solar 550W Monocristalino",
+    price: "299.99",
+    features: ["Eficiencia 21.3%", "Garantía 25 años", "Resistente a climas tropicales"],
+    image: "panel-550w.webp"
+  },
+  {
+    title: "Panel Solar 550W Monocristalino",
+    price: "299.99",
+    features: ["Eficiencia 21.3%", "Garantía 25 años", "Resistente a climas tropicales"],
+    image: "panel-550w.webp"
+  },
+  {
+    title: "Panel Solar 550W Monocristalino",
+    price: "299.99",
+    features: ["Eficiencia 21.3%", "Garantía 25 años", "Resistente a climas tropicales"],
+    image: "panel-550w.webp"
+  },
+  // Agrega más productos aquí...
+];
+---
+<Layout>
+<section class="py-16 bg-gradient-to-b from-white to-blue-50 w-full">
+  <div class="max-w-[95%] mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Encabezado y Buscador -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        <span class="bg-gradient-to-r from-[#0085c5] to-[#00c8d0] bg-clip-text text-transparent">
+          Tecnología Solar
+        </span> Premium
+      </h1>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">Encuentra los mejores productos para tu sistema solar</p>
+      
+      <!-- Input de Búsqueda -->
+      <div class="mt-8 max-w-md mx-auto relative">
+        <input 
+          type="text" 
+          placeholder="Buscar productos..." 
+          class="w-full pl-12 pr-4 py-3 rounded-full border border-gray-200 focus:border-[#00c8d0] focus:ring-2 focus:ring-[#00c8d0]/30 transition-all"
+        >
+        <SearchIcon class="w-5 h-5 absolute left-4 top-3.5 text-gray-400" />
+      </div>
+    </div>
+
+    <!-- Grid de Productos -->
+    <div class="flex flex-wrap justify-center gap-5">
+      {products.map((product, index) => (
+        <ProductCard
+          title={product.title}
+          price={product.price}
+          features={product.features}
+          image={product.image}
+        />
+      ))}
+    </div>
+
+    <!-- Paginación (ejemplo estático) -->
+    <div class="mt-12 flex justify-center gap-2">
+      <button class="w-10 h-10 rounded-full bg-[#0085c5] text-white">1</button>
+      <button class="w-10 h-10 rounded-full bg-white text-[#0085c5] border border-[#0085c5] hover:bg-[#0085c5]/10">2</button>
+      <button class="w-10 h-10 rounded-full bg-white text-[#0085c5] border border-[#0085c5] hover:bg-[#0085c5]/10">3</button>
+    </div>
+  </div>
+</section>
+</Layout>
