@@ -1,6 +1,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
 @import "tailwindcss";
 
+:root {
+  /* Tus dos colores base y dos tonos extra que combinan */
+  --c1: #0085c5;
+  --c2: #00c8d0;
+  --c3: #007a9e; /* tono intermedio más oscuro */
+  --c4: #005f77; /* tono más profundo */
+}
+
+.bg-animada {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Gradiente con 4 paradas al 0%,25%,50%,75% */
+  background: linear-gradient(
+    to br,
+    var(--c1) 0%,
+    var(--c2) 25%,
+    var(--c3) 50%,
+    var(--c4) 75%
+  );
+  /* Hacemos el fondo 4× el tamaño para poder desplazarlo */
+  background-size: 400% 400%;
+  /* Animación continua de “empuje” */
+  animation: gradientPush 8s ease infinite;
+}
+
+/* Keyframes que mueven el gradiente de izquierda a derecha */
+@keyframes gradientPush {
+  0%   { background-position:   0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position:   0% 50%; }
+}
+
+/* Aseguramos texto blanco y centrado */
+.bg-animada h1 {
+  color: white;
+  font-size: 2rem;
+  z-index: 1;
+}
+
 
 
 h1, h2, h3, h4, h5, h6 {

@@ -1,0 +1,129 @@
+@keyframes slideLeft {
+    0% {
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+
+    40% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(50%);
+        opacity: 0;
+    }
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(50%);
+        opacity: 0;
+    }
+
+    30% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(50%);
+        opacity: 0;
+    }
+
+    20% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(50%);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    40% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    20%,
+    60% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.perspective-1000 {
+    perspective: 1000px;
+}
+
+.preserve-3d {
+    transform-style: preserve-3d;
+}
+
+.face {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+.card-container.flipped {
+    transform: rotateY(180deg);
+
+}
+
+.slefting {
+    animation: slideLeft 0.5s ease-in-out;
+    animation-timeline: view();
+}
+
+.righting {
+    animation: slideRight 0.5s ease-in-out;
+    animation-timeline: view();
+}
+
+.dowing {
+    animation: slideDown 0.5s ease-in-out;
+    animation-timeline: view();
+}
+
+.upping {
+    animation: slideUp 0.5s ease-in-out;
+    animation-timeline: view();
+}
+
+.fadeing {
+    animation: fadeIn 0.5s ease-in-out;
+    animation-timeline: view();
+}

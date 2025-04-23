@@ -1,0 +1,17 @@
+---
+// components/MapEmbed.astro
+const { lat, lng, title } = Astro.props;
+---
+<div class="map-container">
+  <!-- iframe generado por “Compartir” en Google Maps -->
+  <iframe
+    width="100%"
+    height="450"
+    style="border:0"
+    loading="lazy"
+    allowfullscreen
+    referrerpolicy="no-referrer-when-downgrade"
+    src={`https://www.google.com/maps?q=${lat},${lng}&z=15&output=embed`}>
+  </iframe>
+  <h3>{title}</h3>
+</div>
